@@ -22,7 +22,7 @@ function pet(name, age, gender, breed, service, owner, phone) {
   this.ownerName = owner;
   this.contactPhone = phone;
 }
-
+// Below is the code for the class 1 assignment for the 3 pets being created using object literals.
 let scooby = new pet(
   "Scooby",
   50,
@@ -41,10 +41,17 @@ let scrappy = new pet(
   "Shaggy",
   "555-555-5555"
 );
-salon.pets.push(scooby, scrappy);
+let finrir = new pet(
+  "Finrir",
+  4,
+  "Male",
+  "Blue Healer",
+  "Fulll Service",
+  "John",
+  "555-555-5555"
+);
+salon.pets.push(scooby, scrappy, finrir);
 
-console.log(salon.pets[0].name);
-console.log(salon.pets[1].name);
 function displaySalonInfo() {
   let DISPLAY = document.getElementById("register-display");
   let tmp = `
@@ -87,6 +94,7 @@ function register() {
 
   salon.pets.push(newPet);
   clearform();
+  alertPet();
 }
 
 function clearform() {
@@ -98,8 +106,16 @@ function clearform() {
   // inputOwner.value = "";
   // inputPhone.value = "";
 }
+// Below is the code for the class 1 assignment for the 3 pets names being displayed in the console.
+function alertPet() {
+  for (let i = 0; i < salon.pets.length; i++) {
+    console.log(salon.pets[i].name);
+  }
+  alert(`There are now ${salon.pets.length} pets registered.`);
+}
 function init() {
   displaySalonInfo();
+  alertPet();
 }
 
 window.onload = init;
