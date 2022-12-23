@@ -1,5 +1,6 @@
+// Below is the code for the class 2 assignment for the salon object literal and the pet constructor.
 let salon = {
-  name: "The Fashion Pet",
+  name: "The Pink Poodle",
   phone: 555 - 555 - 5555,
   address: {
     street: "main street",
@@ -12,7 +13,7 @@ let salon = {
   },
   pets: [],
 };
-
+// console.log(salon);
 function pet(name, age, gender, breed, service, owner, phone) {
   this.name = name;
   this.age = age;
@@ -51,46 +52,36 @@ let finrir = new pet(
   "555-555-5555"
 );
 salon.pets.push(scooby, scrappy, finrir);
-
-function displaySalonInfo() {
-  let DISPLAY = document.getElementById("register-display");
-  let tmp = `
-    <h1>${salon.name}</h1>
-    <p>${salon.address.street}, ${salon.address.number}</p>
-    <p>${salon.address.zip}</p>
-    `;
-  DISPLAY.innerHTML = tmp;
-}
-
+// Below is the code for the class 2 assignment for the register/constructor/clear form functions.
 let inputName = document.getElementById("txt-name");
 let inputAge = document.getElementById("txt-age");
-let inputGender = document.getElementById("txt-gender");
+let inputGender = document.getElementById("sel-gender");
 let inputBreed = document.getElementById("txt-breed");
-let inputService = document.getElementById("service");
-// let inputOwner = document.getElementById("txt-owner");
-// let inputPhone = document.getElementById("txt-phone");
+let inputService = document.getElementById("sel-service");
+let inputOwner = document.getElementById("txt-owner");
+let inputPhone = document.getElementById("txt-phone");
 
 function register() {
-  console.log(
-    inputName.value,
-    inputAge.value,
-    inputGender.value,
-    inputBreed.value,
-    inputService.value
-    // inputOwner.value,
-    // inputPhone.value
-  );
+  // console.log(
+  //   inputName.value,
+  //   inputAge.value,
+  //   inputGender.value,
+  //   inputBreed.value,
+  //   inputService.value,
+  //   inputOwner.value,
+  //   inputPhone.value
+  // );
 
   let newPet = new pet(
     inputName.value,
     inputAge.value,
     inputGender.value,
     inputBreed.value,
-    inputService.value
-    // inputOwner.value,
-    // inputPhone.value
+    inputService.value,
+    inputOwner.value,
+    inputPhone.value
   );
-  console.log(newPet);
+  // console.log(newPet);
 
   salon.pets.push(newPet);
   clearform();
@@ -103,8 +94,8 @@ function clearform() {
   inputGender.value = "";
   inputBreed.value = "";
   inputService.value = "";
-  // inputOwner.value = "";
-  // inputPhone.value = "";
+  inputOwner.value = "";
+  inputPhone.value = "";
 }
 // Below is the code for the class 1 assignment for the 3 pets names being displayed in the console.
 function alertPet() {
@@ -113,8 +104,18 @@ function alertPet() {
   }
   alert(`There are now ${salon.pets.length} pets registered.`);
 }
+function displaySalonInfo() {
+  let DISPLAY = document.getElementById("register-display");
+  let tmp = `
+    <h1>${salon.name}</h1>
+    <p>${salon.address.street}, ${salon.address.number}</p>
+    <p>${salon.address.zip}</p>
+    `;
+  DISPLAY.innerHTML = tmp;
+}
 function init() {
   displaySalonInfo();
+  showServices();
   alertPet();
 }
 

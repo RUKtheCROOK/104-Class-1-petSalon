@@ -1,21 +1,37 @@
-let services = {
-  shampoo: 20,
-  hairCut: 30,
-  nailsCut: 15,
-  hairColor: 60,
-  deShedding: 80,
-  deMatting: 100,
-  bath: 40,
-  fleaTreatment: 20,
-  earCleaning: 15,
-  teethCleaning: 30,
-  analGlands: 20,
-  nailGrinding: 15,
-  nailPolish: 5,
-  pawMassage: 10,
-  bellyRubs: 5,
-  cuddles: 5,
-  kisses: 5,
-  hugs: 5,
-  snuggles: 5,
-};
+let services = [
+  `Full Service`,
+  `Grooming`,
+  `Shampoo`,
+  `Hair Cut`,
+  `Nails Cut`,
+  `Hair Color`,
+  `Deshedding`,
+  `Dematting`,
+  `Bath`,
+  `Flea Treatment`,
+  `Ear Cleaning`,
+  `Teeth Cleaning`,
+  `Basic Shots`,
+  `Nail Grinding`,
+  `Nail Polish`,
+  `Paw Massage`,
+  `Belly Rubs`,
+  `Cuddles`,
+  `Kisses`,
+  `Hugs`,
+  `Snuggles`,
+];
+
+let serviceCost = [
+  5000, 50, 20, 30, 15, 60, 80, 100, 40, 20, 15, 30, 20, 15, 5, 10, 5, 5, 5, 5,
+  5,
+];
+
+function showServices() {
+  let servicesDisplay = document.getElementById("sel-service");
+  let serviceOptions = "";
+  for (let t = 0; t < services.length; t++) {
+    serviceOptions += `<option value="${services[t]}">$${serviceCost[t]} ${services[t]}</option>`;
+    servicesDisplay.innerHTML = serviceOptions;
+  }
+}
