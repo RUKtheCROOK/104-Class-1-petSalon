@@ -1,4 +1,5 @@
 let services = [
+  `No Service`,
   `Full Service`,
   `Grooming`,
   `Shampoo`,
@@ -23,14 +24,15 @@ let services = [
 ];
 
 let serviceCost = [
-  5000, 50, 20, 30, 15, 60, 80, 100, 40, 20, 15, 30, 20, 15, 5, 10, 5, 5, 5, 5,
-  5,
+  0, 5000, 50, 20, 30, 15, 60, 80, 100, 40, 20, 15, 30, 20, 15, 5, 10, 5, 5, 5,
+  5, 5,
 ];
 
 function showServices() {
   let servicesDisplay = document.getElementById("sel-service");
   let serviceOptions = "";
   for (let t = 0; t < services.length; t++) {
+    serviceOptions == "";
     serviceOptions += `<option value="${services[t]}">$${serviceCost[t]} ${services[t]}</option>`;
     servicesDisplay.innerHTML = serviceOptions;
   }

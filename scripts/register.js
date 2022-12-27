@@ -51,7 +51,7 @@ let finrir = new pet(
   "John",
   "555-555-5555"
 );
-salon.pets.push(scooby, scrappy, finrir);
+
 // Below is the code for the class 2 assignment for the register/constructor/clear form functions.
 let inputName = document.getElementById("txt-name");
 let inputAge = document.getElementById("txt-age");
@@ -60,6 +60,36 @@ let inputBreed = document.getElementById("txt-breed");
 let inputService = document.getElementById("sel-service");
 let inputOwner = document.getElementById("txt-owner");
 let inputPhone = document.getElementById("txt-phone");
+
+function isValid(aPet) {
+  let valid = true;
+  inputName.classList.remove("error");
+  inputAge.classList.remove("error");
+  inputBreed.classList.remove("error");
+  inputService.classList.remove("error");
+  inputPhone.classList.remove("error");
+  if (aPet.name == "") {
+    valid = false;
+    inputName.classList.add("error");
+  }
+  if (aPet.age == "") {
+    valid = false;
+    inputAge.classList.add("error");
+  }
+  if (aPet.breed == "") {
+    valid = false;
+    inputBreed.classList.add("error");
+  }
+  if (aPet.service == `No Service`) {
+    valid = false;
+    inputService.classList.add("error");
+  }
+  if (aPet.contactPhone == "") {
+    valid = false;
+    inputPhone.classList.add("error");
+  }
+  return valid;
+}
 
 function register() {
   // console.log(
@@ -82,18 +112,24 @@ function register() {
     inputPhone.value
   );
   // console.log(newPet);
-
-  salon.pets.push(newPet);
-  clearform();
-  alertPet();
+  if (isValid(newPet)) {
+    salon.pets.push(newPet);
+    clearform();
+    alertPet();
+    displayCards();
+  } else {
+    alert(
+      "Please fill out all required fields and select a chargable service."
+    );
+  }
 }
 
 function clearform() {
   inputName.value = "";
   inputAge.value = "";
-  inputGender.value = "";
+  inputGender.value = "Male";
   inputBreed.value = "";
-  inputService.value = "";
+  inputService.value = "No Service";
   inputOwner.value = "";
   inputPhone.value = "";
 }
@@ -105,7 +141,7 @@ function alertPet() {
   alert(`There are now ${salon.pets.length} pets registered.`);
 }
 function displaySalonInfo() {
-  let DISPLAY = document.getElementById("register-display");
+  let DISPLAY = document.getElementById("footer-display");
   let tmp = `
     <h1>${salon.name}</h1>
     <p>${salon.address.street}, ${salon.address.number}</p>
@@ -114,9 +150,11 @@ function displaySalonInfo() {
   DISPLAY.innerHTML = tmp;
 }
 function init() {
+  salon.pets.push(scooby, scrappy, finrir);
   displaySalonInfo();
   showServices();
   alertPet();
+  displayCards();
 }
 
 window.onload = init;
