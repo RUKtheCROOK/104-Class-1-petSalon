@@ -14,7 +14,10 @@ let salon = {
   pets: [],
 };
 // console.log(salon);
-function pet(name, age, gender, breed, service, owner, phone) {
+// below is code for the final assignment for class 4 to delete the pets from the table using the counter.
+let c = 1;
+
+function pet(name, age, gender, breed, service, owner, phone, Id) {
   this.name = name;
   this.age = age;
   this.gender = gender;
@@ -22,6 +25,7 @@ function pet(name, age, gender, breed, service, owner, phone) {
   this.service = service;
   this.ownerName = owner;
   this.contactPhone = phone;
+  this.id = c++;
 }
 // Below is the code for the class 1 assignment for the 3 pets being created using object literals.
 let scooby = new pet(
@@ -60,7 +64,6 @@ let inputBreed = document.getElementById("txt-breed");
 let inputService = document.getElementById("sel-service");
 let inputOwner = document.getElementById("txt-owner");
 let inputPhone = document.getElementById("txt-phone");
-
 // Below is the code for class 3 to mark the inputs as true or false.
 function isValid(aPet) {
   let valid = true;
@@ -134,12 +137,28 @@ function clearform() {
   inputOwner.value = "";
   inputPhone.value = "";
 }
+
+// below is the code for the class 4 assignment for the delete function.
+function deletePet(aPetId) {
+  let indexDelete = salon.pets.findIndex((pet) => pet.id == aPetId);
+  salon.pets.splice(indexDelete, 1);
+  alertPet();
+  displayCards();
+}
 // Below is the code for the class 1 assignment for the 3 pets names being displayed in the console.
 function alertPet() {
   for (let i = 0; i < salon.pets.length; i++) {
     console.log(salon.pets[i].name);
   }
-  alert(`There are now ${salon.pets.length} pets registered.`);
+  if (salon.pets.length == 0) {
+    alert(`There are currently no pets registered!`);
+  } else {
+    if (salon.pets.length == 1) {
+      alert(`There is currently ${salon.pets.length} pet registered!`);
+    } else {
+      alert(`There are currently ${salon.pets.length} pets registered!`);
+    }
+  }
 }
 function displaySalonInfo() {
   let DISPLAY = document.getElementById("footer-display");

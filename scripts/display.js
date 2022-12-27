@@ -14,9 +14,10 @@ function displayCards() {
     // var txtPhone = document.createTextNode(pet.contactPhone);
 
     petCard = `
-        <div class="pet"><table class="table">
-        <thead class="table-primary">
+        <div class="container"><div  class="pet"><table class="table table-bordered border-primary">
+        <thead class="table-primary border-secondary">
           <tr>
+            <th>Pet #</th>
             <th>Name</th>
             <th>Age</th>
             <th>Gender</th>
@@ -24,15 +25,23 @@ function displayCards() {
             <th>Service</th>
             <th>Owner</th>
             <th>Phone</th>
+            <th>Delete</th>
             </thead><tbody id="petTable"></tbody>
-        </div>`;
-    petData += `<tr class="table-secondary table-bordered border-success"><td>${pet.name}</td>
+            
+        </div></div>`;
+    petData += `<tr class="table-secondary table-bordered border-primary" id="${
+      pet.id
+    }"><td>${[q + 1]}</td><td>${pet.name}</td>
     <td>${pet.age}</td>
     <td>${pet.gender}</td>
     <td>${pet.breed}</td>
     <td>${pet.service}</td>
     <td>${pet.ownerName}</td>
-    <td>${pet.contactPhone}</td>
+    <td>${
+      pet.contactPhone
+    }</td><td class="table-secondary"><button class="btn btn-danger" onclick="deletePet(${
+      pet.id
+    })">Delete</button></td>
     </tr>`;
   }
 
