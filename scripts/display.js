@@ -1,3 +1,5 @@
+// Below is the code for class 3 to display the pets in the table.
+
 function displayCards() {
   let petCard = "";
   let petData = "";

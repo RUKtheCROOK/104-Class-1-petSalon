@@ -61,6 +61,7 @@ let inputService = document.getElementById("sel-service");
 let inputOwner = document.getElementById("txt-owner");
 let inputPhone = document.getElementById("txt-phone");
 
+// Below is the code for class 3 to mark the inputs as true or false.
 function isValid(aPet) {
   let valid = true;
   inputName.classList.remove("error");
