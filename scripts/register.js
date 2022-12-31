@@ -1,15 +1,17 @@
 // Below is the code for the class 2 assignment for the salon object literal and the pet constructor.
 let salon = {
-  name: "The Pink Poodle",
-  phone: 555 - 555 - 5555,
+  name: "Clip `N Clean",
+  phone: 727 - 545 - 1390,
   address: {
-    street: "main street",
-    number: "123",
-    zip: "12345",
+    street: "Clean Pets Ave",
+    number: "Bldg 2 Suite 10",
+    zip: "90123",
+    state: "FL",
+    city: "Pinellas",
   },
   hours: {
-    open: "9:00 am",
-    close: "5:00 pm",
+    open: "8:00 am",
+    close: "8:00 pm",
   },
   pets: [],
 };
@@ -163,9 +165,10 @@ function alertPet() {
 function displaySalonInfo() {
   let DISPLAY = document.getElementById("footer-display");
   let tmp = `
-    <h1>${salon.name}</h1>
+    <h3>${salon.name}</h3>
+    <h5>Located at:</h5>
     <p>${salon.address.street}, ${salon.address.number}</p>
-    <p>${salon.address.zip}</p>
+    <p>${salon.address.city}, ${salon.address.state} ${salon.address.zip}</p>
     `;
   DISPLAY.innerHTML = tmp;
 }

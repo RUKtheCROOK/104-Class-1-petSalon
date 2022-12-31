@@ -1,0 +1,8 @@
+$custom-colors: (
+  "text-1": #03045e,
+  "text-2": #023e8a,
+  "text-3": #0077b6,
+  "background-1": #6dcff6,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);

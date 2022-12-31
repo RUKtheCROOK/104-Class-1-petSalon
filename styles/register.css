@@ -1,9 +1,0 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
-
-.error {
-  border: solid red 5px;
-}
-
-.btn-dark {
-  margin-bottom: 20px;
-}
