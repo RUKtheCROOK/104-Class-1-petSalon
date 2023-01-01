@@ -2,31 +2,19 @@ let services = [
   `No Service`,
   `Full Service`,
   `Grooming`,
-  `Shampoo`,
   `Hair Cut`,
-  `Nails Cut`,
-  `Hair Color`,
+  `Nail Trim`,
   `Deshedding`,
   `Dematting`,
   `Bath`,
   `Flea Treatment`,
   `Ear Cleaning`,
   `Teeth Cleaning`,
-  `Basic Shots`,
-  `Nail Grinding`,
-  `Nail Polish`,
-  `Paw Massage`,
-  `Belly Rubs`,
-  `Cuddles`,
-  `Kisses`,
-  `Hugs`,
-  `Snuggles`,
+  `Coat Conditioning`,
+  `Skin Treatments`,
 ];
 
-let serviceCost = [
-  0, 5000, 50, 20, 30, 15, 60, 80, 100, 40, 20, 15, 30, 20, 15, 5, 10, 5, 5, 5,
-  5, 5,
-];
+let serviceCost = [0, 5000, 50, 30, 15, 80, 100, 40, 20, 15, 30, 20, 30];
 
 function showServices() {
   let servicesDisplay = document.getElementById("sel-service");

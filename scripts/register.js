@@ -1,6 +1,6 @@
 // Below is the code for the class 2 assignment for the salon object literal and the pet constructor.
 let salon = {
-  name: "Clip `N Clean",
+  name: "Clip & Clean",
   phone: 727 - 545 - 1390,
   address: {
     street: "Clean Pets Ave",
@@ -19,10 +19,11 @@ let salon = {
 // below is code for the final assignment for class 4 to delete the pets from the table using the counter.
 let c = 1;
 
-function pet(name, age, gender, breed, service, owner, phone, Id) {
+function pet(name, age, gender, payment, breed, service, owner, phone, Id) {
   this.name = name;
   this.age = age;
   this.gender = gender;
+  this.payment = payment;
   this.breed = breed;
   this.service = service;
   this.ownerName = owner;
@@ -34,6 +35,7 @@ let scooby = new pet(
   "Scooby",
   50,
   "Male",
+  "Cash",
   "Dane",
   "Full Service",
   "Shaggy",
@@ -43,6 +45,7 @@ let scrappy = new pet(
   "Scrappy",
   40,
   "Female",
+  "Debit",
   "Dane",
   "Full Service",
   "Shaggy",
@@ -52,6 +55,7 @@ let finrir = new pet(
   "Finrir",
   4,
   "Male",
+  "Credit",
   "Blue Healer",
   "Fulll Service",
   "John",
@@ -62,6 +66,7 @@ let finrir = new pet(
 let inputName = document.getElementById("txt-name");
 let inputAge = document.getElementById("txt-age");
 let inputGender = document.getElementById("sel-gender");
+let inputPayment = document.getElementById("txt-payment");
 let inputBreed = document.getElementById("txt-breed");
 let inputService = document.getElementById("sel-service");
 let inputOwner = document.getElementById("txt-owner");
@@ -112,6 +117,7 @@ function register() {
     inputName.value,
     inputAge.value,
     inputGender.value,
+    inputPayment.value,
     inputBreed.value,
     inputService.value,
     inputOwner.value,
@@ -134,6 +140,7 @@ function clearform() {
   inputName.value = "";
   inputAge.value = "";
   inputGender.value = "Male";
+  inputPayment.value = "";
   inputBreed.value = "";
   inputService.value = "No Service";
   inputOwner.value = "";
@@ -165,11 +172,14 @@ function alertPet() {
 function displaySalonInfo() {
   let DISPLAY = document.getElementById("footer-display");
   let tmp = `
-    <h3>${salon.name}</h3>
-    <h5>Located at:</h5>
-    <p>${salon.address.street}, ${salon.address.number}</p>
-    <p>${salon.address.city}, ${salon.address.state} ${salon.address.zip}</p>
-    `;
+   <div class="footer-background">
+   <div class="footer-conatiner">
+    <h1 class="footer-salon-name text-center text-text-1">${salon.name}</h1>
+    <div class="text-center footer-text">
+    <h5 class="text-text-1">Located at:</h5>
+    <p class="text-text-1">${salon.address.street}, ${salon.address.number}</p>
+    <p class="text-text-1">${salon.address.city}, ${salon.address.state} ${salon.address.zip}</p></div>
+    </div></div>`;
   DISPLAY.innerHTML = tmp;
 }
 function init() {
@@ -179,5 +189,4 @@ function init() {
   alertPet();
   displayCards();
 }
-
 window.onload = init;

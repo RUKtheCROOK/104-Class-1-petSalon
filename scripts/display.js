@@ -14,37 +14,38 @@ function displayCards() {
     // var txtPhone = document.createTextNode(pet.contactPhone);
 
     petCard = `
-        <div class="container"><div  class="pet"><table class="table table-bordered border-primary">
-        <thead class="table-primary border-secondary">
+        <div class="table-container"><div class="pet"><table>
+        <thead>
           <tr>
-            <th>Pet #</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Breed</th>
-            <th>Service</th>
-            <th>Owner</th>
-            <th>Phone</th>
+            <th class="tablenumber">Pet #</th>
+            <th class="tablename">Name</th>
+            <th class="tableage">Age</th>
+            <th class="tablegender">Gender</th>
+            <th class="tablepayment">Payment</th>
+            <th class="tablebreed">Breed</th>
+            <th class="tableservice">Service</th>
+            <th class="tableowner">Owner</th>
+            <th class="tablephone">Phone</th>
             <th>Delete</th>
             </thead><tbody id="petTable"></tbody>
             
         </div></div>`;
-    petData += `<tr class="table-secondary table-bordered border-primary" id="${
-      pet.id
-    }"><td>${[q + 1]}</td><td>${pet.name}</td>
-    <td>${pet.age}</td>
-    <td>${pet.gender}</td>
-    <td>${pet.breed}</td>
-    <td>${pet.service}</td>
-    <td>${pet.ownerName}</td>
-    <td>${
+    petData += `<tr class="tablenumber" id="${pet.id}"><td>${[
+      q + 1,
+    ]}</td><td class="tablename">${pet.name}</td>
+    <td class="tableage">${pet.age}</td>
+    <td class="tablegender">${pet.gender}</td>
+    <td class="tablepayment">${pet.payment}</td>
+    <td class="tablebreed">${pet.breed}</td>
+    <td class="tableservice">${pet.service}</td>
+    <td class="tableowner">${pet.ownerName}</td>
+    <td class="tablephone">${
       pet.contactPhone
-    }</td><td class="table-secondary"><button class="btn btn-danger" onclick="deletePet(${
+    }</td><td><button id="deletebutton" onclick="deletePet(${
       pet.id
     })">Delete</button></td>
     </tr>`;
   }
-
   document.getElementById("petsDisplay").innerHTML = petCard;
   document.getElementById("petTable").innerHTML = petData;
 }

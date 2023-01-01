@@ -16,9 +16,15 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 // 8. Add additional custom code here
 
-// All of the fonts
+// All of the fonts start
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,400;1,700&display=swap");
+// All of the fonts end
+
+// The index.html page start **But also the base for the rest of the site**
+// The header/logo start
 .background {
   width: 100%;
   height: 190px;
@@ -51,7 +57,9 @@ h1 {
   letter-spacing: 3px;
   background-color: whitesmoke;
 }
+// The header/logo end
 
+// The navigation bar start
 @media screen and (min-width: 701px) {
   .underline {
     border: solid 2px #03045e;
@@ -98,10 +106,475 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
-.error {
-  border: solid red 5px;
+// The navigation bar end
+
+// The main content start
+
+main h3 {
+  font-family: "Alegreya SC", serif;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 3px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border: #03045e solid 2px;
+  color: #03045e;
 }
 
-.btn-dark {
+p.intro {
+  font-family: "Playfair Display", serif;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  background-color: #03045e;
+  font-size: 18px;
+}
+main u.salonname {
+  font-family: "Alegreya SC", serif;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+main div.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+}
+main div.flex-review {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #03045e 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+main div.flex-review img {
+  width: 100%;
+  height: 180px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #03045e 3px;
+  background-color: white;
+  padding: 2px;
+  margin-top: 3px;
+}
+main div.flex-child {
+  width: 60%;
+  height: 102%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #03045e 4px;
+}
+
+.sincer {
+  margin-left: 20px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 900;
+  color: #03045e;
+  margin-top: -15px;
+}
+
+.clipnteam {
+  margin-left: 20px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #03045e;
+}
+
+.salonname1 {
+  font-family: "Alegreya SC", serif;
+  text-decoration: none;
+  font-size: 38px;
+}
+.review-text {
+  font-family: "pt serif", serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reviewer-name {
+  text-align: end;
+  font-family: "pt serif", serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+main div.flex-container div.flex-child img {
+  width: 80%;
+  height: 180px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #03045e 3px;
+  background-color: white;
+  padding: 2px;
+  margin-top: 3px;
+}
+
+.service-name {
+  font-family: "Alegreya SC", serif;
+  font-size: 40px;
+  color: #03045e;
+  text-align: center;
+}
+.service-text {
+  font-family: "pt serif", serif;
+  text-align: center;
+  color: #03045e;
+  font-size: 20px;
+  font-weight: 600;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// The footer start
+#footer-underline {
+  margin-top: 20px;
+}
+.footer-background {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/paws5.png");
+  background-position: center;
+  margin-bottom: -190px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-salon-name {
+  margin-top: -15px;
+}
+.footer-text {
+  background-color: white;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding-top: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 5px;
+  margin-top: -50px;
+  padding-top: 50px;
+}
+div.footer-text h5 {
+  font-family: "Alegreya SC", serif;
+  font-size: 30px;
+  color: #03045e;
+  text-align: center;
+}
+div.footer-text p {
+  font-family: "pt serif", serif;
+  text-align: center;
+  color: #03045e;
+  font-size: 15px;
+  font-weight: 600;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+// The footer end
+
+// The screen sizing for 1400px start
+@media screen and (min-width: 1400px) {
+  .service-text {
+    height: 646px;
+  }
+  main div.flex-review {
+    padding-bottom: 6px;
+  }
+}
+// The screen sizing for 1400px end
+// The screen sizing for 1200-1399px start
+@media screen and (max-width: 1399px) and (min-width: 1200px) {
+  main div.flex-child {
+    padding-bottom: 12px;
+  }
+  .service-text {
+    height: 760px;
+  }
+}
+// The screen sizing for 1200-1399px end
+
+// The screen sizing for 992px - 1199px start
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  main div.flex-child {
+    padding-bottom: 36px;
+  }
+  .service-text {
+    font-size: 17px;
+    height: 700px;
+  }
+  main div#flex-review2 {
+    padding-bottom: 25px;
+  }
+}
+//  The screen sizing for 992px - 1199px end
+
+// The screen sizing for 768px - 991px start
+// @media screen and (max-width: 991px) and (min-width: 768px) {
+//   p.intro {
+//     font-size: 17px;
+//   }
+//   main div.flex-review {
+//     padding-bottom: 15px;
+//   }
+//   .service-text {
+//     font-size: 17px;
+//     height: 960px;
+//   }
+//   .service-name {
+//     font-size: 35px;
+//   }
+//   #ears {
+//     font-size: 30px;
+//   }
+// }
+
+// The screen sizing for 768px - 991px end
+
+// The screen sizing for under 768px start
+@media screen and (max-width: 991px) {
+  main div.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+  }
+  main div.flex-review {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  main div.flex-child {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  main div.flex-review img {
+    height: 100%;
+    width: 70%;
+  }
+  main div.flex-container div.flex-child img {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+// The screen sizing for under 768px end
+
+#index-bottom {
+  margin-top: 20px;
+}
+// The index.html page end
+
+// The services.html page start
+main#services div.flex-container div.flex-child {
+  margin-bottom: 5px;
+}
+
+#services-bottom {
+  margin-top: 20px;
+}
+// The services.html page end
+
+// The register.html page start
+main#register div.container h2 {
+  font-family: "Alegreya SC", serif;
+  font-size: 40px;
+  color: #03045e;
+  text-align: center;
   margin-bottom: 20px;
 }
+
+.underline1 {
+  border: solid 1px white;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  margin-top: -10px;
+}
+emoji {
+  display: Inline-block;
+}
+
+.backwards {
+  transform: scale(-1, 1);
+  color: #000080;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+main#register div.container div.mb-3 label {
+  font-family: "Alegreya SC", serif;
+  color: #03045e;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #03045e 2px;
+  padding: 2px;
+}
+
+#ownerlabel {
+  margin-top: 16px;
+}
+.error {
+  border: dashed #03045e 5px;
+}
+
+#registerbutton {
+  color: #03045e;
+  background-color: white;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 2px #03045e;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Alegreya SC", serif;
+  margin-bottom: 20px;
+}
+#registerbutton:hover {
+  background-color: #03045e;
+  color: white;
+}
+
+// Talbe start
+.table-container {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  height: fit-content;
+  border: #03045e 5px solid;
+  border-radius: 10px;
+}
+table {
+  width: 100%;
+  border: solid 5px #03045e;
+  background-color: white;
+  height: 100%;
+}
+table th {
+  border-bottom: #03045e 5px solid;
+  font-family: "Alegreya SC", serif;
+  color: white;
+  font-size: 30px;
+  background-color: #03045e;
+}
+table td {
+  font-family: "Alegreya SC", serif;
+  color: #03045e;
+  border-bottom: #03045e 1px solid;
+  font-size: 20px;
+  border-right: #03045e 1px solid;
+}
+
+#deletebutton {
+  color: white;
+  background-color: #03045e;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Alegreya SC", serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#deletebutton:hover {
+  background-color: white;
+  color: #03045e;
+  border: solid 2px #03045e;
+}
+
+// Table media screen for 880px
+@media screen and (max-width: 1060px) {
+  table {
+    width: 100%;
+  }
+  table th {
+    font-size: 20px;
+  }
+  table td {
+    font-size: 15px;
+  }
+  #deletebutton {
+    font-size: 20px;
+  }
+}
+// Table media screen for 880px end
+// Talbe media screen for 750px
+@media screen and (max-width: 880px) {
+  .tableage {
+    display: none;
+  }
+}
+// Talbe media screen for 750px end
+// Table media screen for 640px
+@media screen and (max-width: 695px) {
+  .tablebreed {
+    display: none;
+  }
+}
+// Table media screen for 640px end
+// Table media screen for 560px
+@media screen and (max-width: 630px) {
+  .tableservice {
+    display: none;
+  }
+}
+// Table media screen for 560px end
+// Table media screen for 530px
+@media screen and (max-width: 530px) {
+  .tablegender {
+    display: none;
+  }
+}
+// Table media screen for 530px end
+
+#register-bottom {
+  margin-top: 20px;
+}
+
+// The register.html page end
